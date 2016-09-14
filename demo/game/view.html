@@ -1,0 +1,32 @@
+<div class="game-container">
+  <h2>Game Standard Items</h2>
+  <input type="button" ng-click="randomize()" value="Randomize" />
+  <input type="button" ng-click="solve()`" value="Solve" />
+  <!--<br>
+  <input type="button" ng-click="gridsterOpts.draggable.enabled = !gridsterOpts.draggable.enabled" value="{{gridsterOpts.draggable.enabled ? 'Disable' : 'Enable' }} Draggability" />
+  <input type="button" ng-click="gridsterOpts.resizable.enabled = !gridsterOpts.resizable.enabled" value="{{gridsterOpts.resizable.enabled ? 'Disable' : 'Enable' }} Resizability" />
+  <input type="button" ng-click="gridsterOpts.floating = !gridsterOpts.floating" value="{{gridsterOpts.floating ? 'Disable' : 'Enable' }} Floating" />
+  <input type="button" ng-click="gridsterOpts.pushing = !gridsterOpts.pushing" value="{{gridsterOpts.pushing ? 'Disable' : 'Enable' }} Pushing" />
+  <input type="button" ng-click="gridsterOpts.swapping = !gridsterOpts.swapping" value="{{gridsterOpts.swapping ? 'Disable' : 'Enable' }} Swapping" /> Margins:
+  <input type="text" ng-model="gridsterOpts.margins[0]" size="3" /> x
+  <input type="text" ng-model="gridsterOpts.margins[1]" size="3" />-->
+
+  <p>
+    Each item provides its own dimensions and position using the standard fields: { row: row, col: col, sizeX: sizeX, sizeY: sizeY }.
+  </p>
+  <div gridster="gridsterOpts">
+    <ul>
+      <li gridster-item="item" ng-repeat="item in displayLayout">
+        <input type="text" integer-g ng-model="item.row" size="1" />,
+        <input type="text" integer-g ng-model="item.col" size="1" />
+        <br />
+        <input type="text" integer-g ng-model="item.sizeX" size="1" />x
+        <input type="text" integer-g ng-model="item.sizeY" size="1" />
+        <br>
+        <span>{{item.val}}</span>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
