@@ -19,9 +19,11 @@ angular.module('app')
   $scope.MAX_COL = 6;
 
   $scope.randomize = function() {
+    $scope.solved = false;
     $scope.displayLayout = $scope.randomItems;
   };
   $scope.solve = function() {
+    $scope.solved = true;
     $scope.displayLayout = $scope.solvedLayout;
   };
 
@@ -113,73 +115,7 @@ angular.module('app')
     row: 2,
     col: 0
   }];
-  //   $scope.standardItems = [{
-  //     sizeX: 2,
-  //     sizeY: 1,
-  //     row: 1,
-  //     col: 0,
-  //     val: 'A'
-  //   }, {
-  //     sizeX: 2,
-  //     sizeY: 2,
-  //     row: 2,
-  //     col: 2,
-  //     val: 'B'
-  //   }, {
-  //     sizeX: 2,
-  //     sizeY: 1,
-  //     row: 0,
-  //     col: 1,
-  //     val: 'C'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 1,
-  //     col: 3,
-  //     val: 'D'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 2,
-  //     col: 4,
-  //     val: 'E'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 0,
-  //     col: 4,
-  //     val: 'F'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 1,
-  //     col: 5,
-  //     val: 'G'
-  //   }, {
-  //     sizeX: 2,
-  //     sizeY: 1,
-  //     row: 2,
-  //     col: 0,
-  //     val: 'H'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 0,
-  //     col: 4,
-  //     val: 'I'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 2,
-  //     row: 1,
-  //     col: 5,
-  //     val: 'J'
-  //   }, {
-  //     sizeX: 1,
-  //     sizeY: 1,
-  //     row: 2,
-  //     col: 0,
-  //     val: 'K'
-  //   }];
+
   $scope.randomItems = [{
     sizeX: 2,
     sizeY: 1,
@@ -248,6 +184,7 @@ angular.module('app')
     val: 'K'
   }];
   $scope.displayLayout = $scope.solvedLayout;
+  $scope.solved = true;
 
 
 
