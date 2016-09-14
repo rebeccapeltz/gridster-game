@@ -20,9 +20,10 @@ angular.module('app')
 
   $scope.randomize = function() {
     $scope.solved = false;
-    $scope.displayLayout = $scope.randomItems;
+    $scope.displayLayout = $scope.randomItems();
   };
   $scope.solve = function() {
+    console.log('solve setting solved to true');
     $scope.solved = true;
     $scope.displayLayout = $scope.solvedLayout;
   };
@@ -116,77 +117,87 @@ angular.module('app')
     col: 0
   }];
 
-  $scope.randomItems = [{
-    sizeX: 2,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 0,
-    val: 'A'
-  }, {
-    sizeX: 2,
-    sizeY: 2,
-    row: $scope.randomRow(),
-    col: 2,
-    val: 'B'
-  }, {
-    sizeX: 2,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 1,
-    val: 'C'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 3,
-    val: 'D'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 4,
-    val: 'E'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 4,
-    val: 'F'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 5,
-    val: 'G'
-  }, {
-    sizeX: 2,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 0,
-    val: 'H'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 4,
-    val: 'I'
-  }, {
-    sizeX: 1,
-    sizeY: 2,
-    row: $scope.randomRow(),
-    col: 5,
-    val: 'J'
-  }, {
-    sizeX: 1,
-    sizeY: 1,
-    row: $scope.randomRow(),
-    col: 0,
-    val: 'K'
-  }];
+
+  $scope.randomItems = function() {
+    return [{
+      sizeX: 2,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 0,
+      val: 'A'
+    }, {
+      sizeX: 2,
+      sizeY: 2,
+      row: $scope.randomRow(),
+      col: 2,
+      val: 'B'
+    }, {
+      sizeX: 2,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 1,
+      val: 'C'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 3,
+      val: 'D'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 4,
+      val: 'E'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 4,
+      val: 'F'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 5,
+      val: 'G'
+    }, {
+      sizeX: 2,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 0,
+      val: 'H'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 4,
+      val: 'I'
+    }, {
+      sizeX: 1,
+      sizeY: 2,
+      row: $scope.randomRow(),
+      col: 5,
+      val: 'J'
+    }, {
+      sizeX: 1,
+      sizeY: 1,
+      row: $scope.randomRow(),
+      col: 0,
+      val: 'K'
+    }];
+  };
   $scope.displayLayout = $scope.solvedLayout;
   $scope.solved = true;
 
-
+  $scope.$watch('displayLayout', function(items, newItems) {
+    let tooManyRows = items.filter(function(item) {
+      return (item.row > 2);
+    });
+    debugger;
+    $scope.solved = !(too.length > 0);
+    console.log('testRows', $scope.solved);
+  });
 
   //$scope.$watchCollection('standardItems', function(newItems, oldItems) {
   //var newItemLen = newItems ? newItems.length : 0;
