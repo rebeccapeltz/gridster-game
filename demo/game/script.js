@@ -190,14 +190,14 @@ angular.module('app')
   $scope.displayLayout = $scope.solvedLayout;
   $scope.solved = true;
 
-  $scope.$watch('displayLayout', function(items, newItems) {
-    let tooManyRows = items.filter(function(item) {
+  $scope.$watch('displayLayout', function(newValue, oldValue) {
+    let tooManyRows = newValue.filter(function(item) {
       return (item.row > 2);
     });
-    debugger;
-    $scope.solved = !(too.length > 0);
+
+    $scope.solved = !(tooManyRows.length > 0);
     console.log('testRows', $scope.solved);
-  });
+  }, true);
 
   //$scope.$watchCollection('standardItems', function(newItems, oldItems) {
   //var newItemLen = newItems ? newItems.length : 0;
