@@ -1,7 +1,7 @@
 <div class="game-container">
-  <h2>Game Standard Items</h2>
-  <input type="button" ng-click="randomize()" value="Randomize" />
-  <input type="button" ng-click="solve()" value="Solve" />
+  <h2>Drag and Drop Game</h2>
+  <input type="button" class="btn btn-default" ng-click="randomize()" value="Randomize" />
+  <input type="button" class="btn btn-default" ng-click="solve()" value="Solve" />
 
   <div class="red"><span ng-show="solved"><i class="fa fa-heart"></i> solved</span> &nbsp;
   </div>
@@ -9,13 +9,14 @@
   <div gridster="gridsterOpts">
     <ul>
       <li gridster-item="item" ng-repeat="item in displayLayout">
-        <input type="text" integer-g ng-model="item.row" size="1" />,
+        <div class="blockcolor-{{item.blockcolor}} game-box"></div>
+        <!--<input type="text" integer-g ng-model="item.row" size="1" />,
         <input type="text" integer-g ng-model="item.col" size="1" />
         <br />
         <input type="text" integer-g ng-model="item.sizeX" size="1" />x
         <input type="text" integer-g ng-model="item.sizeY" size="1" />
-        <br>
-        <span>{{item.val}}</span>
+        <br>-->
+        <!--<span>{{item.val}}</span>-->
       </li>
     </ul>
   </div>

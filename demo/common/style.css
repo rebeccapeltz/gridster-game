@@ -24,3 +24,10 @@ input {
   float: right;
   padding: 10px;
 }
+
+.blockcolor-red {
+  background-color: red;
+}
+.blockcolor-blue {
+  background-color: blue;
+}
