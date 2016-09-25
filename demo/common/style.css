@@ -31,3 +31,6 @@ input {
 .blockcolor-blue {
   background-color: blue;
 }
+.navbar {
+  margin-bottom: 10px !important;
+}

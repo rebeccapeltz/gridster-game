@@ -17,6 +17,10 @@ body {
   color: red; 
 }
 
+.game-title {
+  color: black;
+}
+
 .game-box {
     height: 100%;
 }

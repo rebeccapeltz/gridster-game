@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Drag and Drop Game</title>
   <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="dist/angular-gridster.min.css" />
@@ -25,17 +25,26 @@
         .config(['$routeProvider',
           function($routeProvider) {
             $routeProvider
-              // .when('/main', {
-              //   templateUrl: 'demo/main/view.html',
-              //   controller: 'MainCtrl'
-              // })
               .when('/game', {
                 templateUrl: 'demo/game/view.html',
                 controller: 'GameCtrl'
               })
-              // .when('/dashboard', {
-              //   templateUrl: 'demo/dashboard/view.html',
-              //   controller: 'DashboardCtrl'
+               .when('/holy_grail', {
+                templateUrl: 'demo/holy_grail/view.html'
+              })
+               .when('/flex_grid', {
+                templateUrl: 'demo/flex_grid/view.html'
+              })
+                .when('/sticky_footer', {
+                templateUrl: 'demo/sticky_footer/view.html'
+              })
+               .when('/about', {
+                templateUrl: 'demo/about/view.html',
+                controller: 'AboutCtrl'
+              })
+              //  .when('/drag_and_drop', {
+              //   templateUrl: 'demo/drag_and_drop/view.html',
+              //   controller: 'DragAndDropController'
               // })
               .otherwise({
                 redirectTo: '/game'
@@ -54,6 +63,8 @@
   <script src="demo/main/script.js"></script>
   <script src="demo/dashboard/script.js"></script>
   <script src="demo/game/script.js"></script>
+  <script src="demo/about/script.js"></script>
+  <!--<script src="demo/drag_and_drop/script.js"</script>`-->
 </head>
 
 <body ng-app="app">
@@ -62,24 +73,33 @@
 
     <div class="navbar navbar-inverse">
       <div class="navbar-inner">
-        <a class="navbar-brand" href="#">Drag and Drop</a>
+        <a class="navbar-brand" href="#/">Arrangements</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <!--<li ng-class="{active: page == 'main'}"><a href="#/main">Main Demo</a>
         </li>-->
         <li ng-class="{active: page == 'game'}"><a href="#/">Game</a>
         </li>
+        </li>
+        <li ng-class="{active: page == 'holy_grail'}"><a href="#/holy_grail">Holy Grail</a>
+        </li>
+        <li ng-class="{active: page == 'flex_grid'}"><a href="#/flex_grid">Flex Grid</a>
+        </li>
+         <li ng-class="{active: page == 'sticky_footer'}"><a href="#/sticky_footer">Sticky Footer</a>
+        </li>
         <!--<li ng-class="{active: page == 'dashboard'}"><a href="#/dashboard">Dashboard Demo</a>
         </li>-->
         <li><a>|</a>
         </li>
-        <li>
-          <a href="coverage" target="_blank" class="code-coverage">Code Coverage</a>
+        <li ng-class="{active: page == 'about'}"><a href="#/about">About</a>
         </li>
+        <!--<li>
+          <a href="coverage" target="_blank" class="code-coverage">Code Coverage</a>
+        </li>-->
       </ul>
     </div>
 
-    <div class="container" ng-view></div>
+    <div ng-view></div>
 
   </div>
 </body>
