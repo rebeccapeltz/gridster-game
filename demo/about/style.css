@@ -12,17 +12,29 @@ header, article, nav, aside, footer{
     border-radius: 5px;
 }
 header, footer {
-    background-color: #ff6666;
+    background-color: lightgray;
+    padding: 10px;
+}
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.align-item {
+    max-width: 50%;
 }
 article {
-    background-color: #99ccff;
+    background-color; white;
     min-height: 300px;
 }
 nav, aside {
-    background-color: #66ff99;
+    background-color: black;
 }
 nav, aside, header, footer {
     min-height: 80px
+}
+nav {
+    color: gold;
 }
 @media all and (min-width:600px){
     #container {

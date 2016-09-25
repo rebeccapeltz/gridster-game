@@ -42,10 +42,10 @@
                 templateUrl: 'demo/about/view.html',
                 controller: 'AboutCtrl'
               })
-              //  .when('/drag_and_drop', {
-              //   templateUrl: 'demo/drag_and_drop/view.html',
-              //   controller: 'DragAndDropController'
-              // })
+               .when('/drag_and_drop', {
+                templateUrl: 'demo/drag_and_drop/view.html',
+                controller: 'DragAndDropController'
+              })
               .otherwise({
                 redirectTo: '/game'
               });
@@ -64,7 +64,7 @@
   <script src="demo/dashboard/script.js"></script>
   <script src="demo/game/script.js"></script>
   <script src="demo/about/script.js"></script>
-  <!--<script src="demo/drag_and_drop/script.js"</script>`-->
+  <script src="demo/drag_and_drop/script.js"></script>
 </head>
 
 <body ng-app="app">
@@ -85,7 +85,9 @@
         </li>
         <li ng-class="{active: page == 'flex_grid'}"><a href="#/flex_grid">Flex Grid</a>
         </li>
-         <li ng-class="{active: page == 'sticky_footer'}"><a href="#/sticky_footer">Sticky Footer</a>
+        <li ng-class="{active: page == 'sticky_footer'}"><a href="#/sticky_footer">Sticky Footer</a>
+        </li>
+        <li ng-class="{active: page == 'drag_and_drop'}"><a href="#/drag_and_drop">Drag and Drop</a>
         </li>
         <!--<li ng-class="{active: page == 'dashboard'}"><a href="#/dashboard">Dashboard Demo</a>
         </li>-->

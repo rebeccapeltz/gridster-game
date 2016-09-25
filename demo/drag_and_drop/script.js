@@ -1,4 +1,7 @@
 // DragAndDropController.js file
+// app.js            
+
+
 var DragAndDropController = function ($scope) {
   // array for dropped items
   $scope.dropped = [];
@@ -33,19 +36,20 @@ var DragAndDropController = function ($scope) {
   };
 };
 
-// DraggableDirective.js
+
 var Draggable = function () {
   return {
     restrict: "A",
     link: function (scope, element, attributes, ctlr) {
       element.attr("draggable", true);
       element.bind("dragstart", function (eventObject) {
-        eventObject.originalEvent.dataTransfer.setData("text", attributes.itemid);
+        eventObject.dataTransfer.setData("text", attributes.itemid);
       });
     }
   };
 }
-// DropTargetDirective.js
+
+
 var DropTarget = function () {
   return {
     restrict: "A",
@@ -55,14 +59,14 @@ var DropTarget = function () {
       });
       element.bind("drop", function (eventObject) {
         // invoke controller/scope move method
-        scope.moveToBox(parseInt(eventObject.originalEvent.dataTransfer.getData("text")));
+        scope.moveToBox(parseInt(eventObject.dataTransfer.getData("text")));
         // cancel actual UI element from dropping, since the angular will recreate a the UI element
         eventObject.preventDefault();
       });
     }
   };
 }
-// app.js            
-angular.module("dd", [])
+angular.module('app')
     .directive("ddDraggable", Draggable)
-    .directive("ddDropTarget", DropTarget);    
+    .directive("ddDropTarget", DropTarget)
+    .controller("DragAndDropController", DragAndDropController);    
